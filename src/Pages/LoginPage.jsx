@@ -112,7 +112,7 @@ const LoginPage = () => {
                   role="status"
                   aria-hidden="true"
                   className="mr-2"
-                />
+                />{" "}
                 Loading...
               </>
             ) : (

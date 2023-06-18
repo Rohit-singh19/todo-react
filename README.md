@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Todo App is a web application that allows users to manage their tasks and todos. Users can add tasks, mark tasks as complete, delete tasks, and change the view mode of the task list.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Todo App](#todo-app)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+    - [Add Task](#add-task)
+    - [Mark Task as Complete](#mark-task-as-complete)
+    - [Delete Task](#delete-task)
+    - [Change View Mode](#change-view-mode)
+  - [Technologies Used](#technologies-used)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running the command `npm install`.
+3. Start the development server using the command `npm start`.
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use the Todo App:
 
-### `npm run build`
+1. Open the application in your web browser.
+2. Register for a new account or log in with your existing credentials.
+3. Once logged in, you will be redirected to the task management dashboard.
+4. Add new tasks by filling in the task details and clicking the "Add Task" button.
+5. To mark a task as complete, click the checkbox next to the task.
+6. To delete a task, click the delete button associated with the task.
+7. Use the view mode toggle to switch between different task list display modes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Add Task
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Description: Allows users to add a new task to their task list.
+- Usage: Fill in the task details (title, description, etc.) and click the "Add Task" button.
+- Code: The `addTask` function in `path/to/taskSlice.js` handles adding a task. It updates the state by appending the new task to the existing list of tasks.
 
-### `npm run eject`
+### Mark Task as Complete
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Description: Enables users to mark a task as complete.
+- Usage: Click the checkbox next to the task to mark it as complete.
+- Code: The `completeTask` function in `path/to/taskSlice.js` is responsible for marking a task as complete. It updates the `completed` property of the selected task to `true`, indicating that the task is completed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Delete Task
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Description: Allows users to delete a task from their task list.
+- Usage: Click the delete button associated with the task to remove it.
+- Code: The `deleteTask` function in `path/to/taskSlice.js` handles the deletion of a task. It filters out the selected task from the list of tasks, effectively removing it from the state.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Change View Mode
 
-## Learn More
+- Description: Enables users to switch between different task list display modes.
+- Usage: Use the view mode toggle to select the desired view mode (e.g., list, grid, etc.).
+- Code: The `changeViewMode` function in `path/to/taskSlice.js` updates the `viewMode` property in the state, allowing the user interface to switch between different task list display modes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- React Bootstrap
+- Redux
+- Redux Toolkit
+- React Router
+- Redux Persist
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).

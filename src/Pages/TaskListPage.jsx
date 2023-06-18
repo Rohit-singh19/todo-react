@@ -10,6 +10,7 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   Modal,
+  Alert,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -50,7 +51,6 @@ const TodoListPage = () => {
     // Updates the taskState when the tasks or currentPage change
     if (tasks[user] && tasks[user]?.length !== 0) {
       let tasksArr = tasks[user]?.slice(0, currentPage * tasksPerPage);
-      console.log("updating...", tasksArr);
       setTaskState(tasksArr);
     } else {
       setTaskState([]);
@@ -83,6 +83,15 @@ const TodoListPage = () => {
         error: "Please Provide Title of the tasks",
       }));
     }
+
+    if (newTask?.title?.length < 10) {
+      // Validates if the title is
+      return setNewTask((prev) => ({
+        ...prev,
+        error: "Title should be minimum of 10 Character",
+      }));
+    }
+
     const { error, ...others } = newTask;
 
     const id = Date.now();
@@ -138,16 +147,13 @@ const TodoListPage = () => {
     if (tasks[user] && tasks[user]?.length > 0) {
       if (searchTerm === "") {
         let tasksArr = tasks[user]?.slice(0, currentPage * tasksPerPage);
-        console.log("tasksArr:::", tasksArr);
         return setTaskState(tasksArr);
       }
 
       let filteredArr = tasks[user]?.filter(
         (task) =>
-          task[user]?.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          task[user]?.description
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase())
+          task?.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          task?.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
       setTaskState(filteredArr || []);
@@ -220,6 +226,7 @@ const TodoListPage = () => {
       <Row>
         <Col xs={12} md={4}>
           <h2 className="title">Add Task</h2>
+          {newTask?.error && <Alert variant="danger">{newTask?.error}</Alert>}
           <Form onSubmit={handleSubmit} className="mb-3">
             <Form.Group controlId="formTitle">
               <Form.Label>Title</Form.Label>
