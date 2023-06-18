@@ -164,7 +164,12 @@ const TodoListPage = () => {
     );
 
     setTimeout(() => {
-      handleDelete();
+      dispatch(
+        deleteTask({
+          user,
+          id,
+        })
+      );
     }, 30000); // Calls handleDelete after a delay of 30 second
   };
 

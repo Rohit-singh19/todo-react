@@ -27,11 +27,11 @@ const tasksSlice = createSlice({
       const task = state.tasks[user].find((task) => task.id === id);
       if (task) {
         task.completed = true;
+        state.taskUpdated = !state.taskUpdated;
       }
     },
     changeViewMode: (state, { payload }) => {
       state.viewMode = payload;
-      state.taskUpdated = !state.taskUpdated;
     },
   },
 });
