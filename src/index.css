@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+.title {
+  color: #36454f;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 20px;
+}
+
+.list-main-container {
+  max-height: calc(60vh - 20px);
+  overflow: auto;
+  margin-bottom: 1rem;
+}
+
+.list-container {
+  display: grid;
+  gap: 1rem;
+  transition: transform 0.5s;
+}
+
+.list-container.grid-view {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.list {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.heading .left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.heading .left .taskTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.heading .left .taskTitle.completed {
+  text-decoration: line-through;
+}
+
+.elipsed-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.delete-icon {
+  background-color: #b900003b;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  background-color: #b9000070;
+}
+
+.delete-icon img {
+  width: 20px;
+  height: auto;
+}
